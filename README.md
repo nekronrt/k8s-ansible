@@ -17,4 +17,5 @@ To use it in a playbook, specify: community.general.timezone.
 
 ## correr playbook
 
-ansible-playbook -i inventory ntp_playbook.yml --u kadmin --ask-become-pass
+
+        ansible-playbook -i inventory ntp_playbook.yml --u kadmin --ask-become-pass
