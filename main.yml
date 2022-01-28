@@ -1,0 +1,15 @@
+- name: Apply the ntp common configuration to all hosts
+  hosts: all
+  remote_user: kadmin
+  become: yes
+
+  roles:
+    - common
+
+- name: apply configuration to all k8s servers
+  hosts: k8sservers
+  remote_user: kadmin
+  become: yes
+
+  roles:
+    - k8s

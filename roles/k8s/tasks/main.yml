@@ -1,0 +1,11 @@
+---
+# tasks file for k8s
+#- name: remove docker repo
+#  apt: name=docker state=absent
+
+- name: Add Docker repository
+  apt_repository:
+    repo: "{{docker_repo}}"
+    state: present
+
+- include: DockerInstall.yml

@@ -1,0 +1,16 @@
+---
+
+- name: This command will unmask systemcd-timesyncd service
+  shell: systemctl unmask systemd-timesyncd.service
+
+- name: Install Systemd-timesyncd
+  apt: package=systemd-timesyncd state=present update_cache=yes
+  tags: systemd-timesyncd
+
+- name: Set timezone to America/Guatemala
+  timezone:
+    name: America/Guatemala
+
+- name: This command will set ntp true
+  shell: timedatectl set-ntp true
+  #notify: restart ntp
